@@ -5,7 +5,7 @@ Student grade management system
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
 
-Keep trac your students' grades easily! Built with Node.js, Express, MongoDB, and ReactJs.
+Keep track your students' grades easily! Built with Node.js, Express, MongoDB, and ReactJs.
 
 
 # Features!

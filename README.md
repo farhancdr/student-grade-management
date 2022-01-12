@@ -1,5 +1,5 @@
 <h1 align="center">
-Student grade ma  
+Student grade management system
 </h1>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs

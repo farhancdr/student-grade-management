@@ -2,6 +2,8 @@ const express = require('express');
 const logger = require('morgan');
 const dotenv = require('dotenv');
 const expressStatusMonitor = require('express-status-monitor');
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUI = require('swagger-ui-express');
 const connectDB = require('./config/db');
 
 // Make all variables from our .env file available in our process
@@ -24,6 +26,19 @@ app.use((req, res, next) => {
   res.locals.user = req.user;
   next();
 });
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    info: {
+      title: 'Employee API',
+      version: '1.0.0'
+    }
+  },
+  apis: ['api.js']
+};
+
+const swaggerDocs = swaggerJSDoc(swaggerOptions);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 // api routes
 app.use(require('./routes'));
